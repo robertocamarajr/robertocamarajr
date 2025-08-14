@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roberto Camara Jr | Content Strategist</title>
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Roberto Camara Jr | Content Strategist">
+    <meta property="og:description" content="Redator, Estrategista de Conteúdo e Gestor de Projetos em Comunicação com mais de 20 anos de experiência">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://robertocamarajr.com">
+    <meta property="og:image" content="https://placeholder.com/400x400">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gidole&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --accent-orange: #eab676;
+            --accent-blue: #abdbe3;
+            --bg-color: #f9f9f9;
+            --text-color: #333;
+            --sidebar-width: 300px;
+            --sidebar-mobile-height: 300px;
+            --transition: all 0.3s ease;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Gidole', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            margin-bottom: 1rem;
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            font-size: 2rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--accent-blue);
+        }
+
+        h3 {
+            font-size: 1.5rem;
+            color: var(--accent-orange);
+        }
+
+        h4 {
+            font-size: 1.2rem;
+        }
+
+        p {
+            margin-bottom: 1rem;
+        }
+
+        a {
+            color: var(--accent-orange);
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        a:hover {
+            color: var(--accent-blue);
+        }
+section {
+    padding: 2rem 1rem;
+    scroll-margin-top: 1.5rem;
+}
+
+        .meta {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        /* Layout */
+        .container {
+            display: flex;
+            flex-direction: row;
+            min-height: 100vh;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: #fff;
+            border-right: 3px solid var(--accent-blue);
+            padding: 2rem;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            transition: var(--transition);
+        }
+
+        .sidebar-content {
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .profile-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background-color: var(--accent-blue);
+            border: 5px solid var(--accent-orange);
+            margin: 0 auto 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #fff;
+        }
+
+        .contact-info {
+            margin-bottom: 2rem;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .contact-icon {
+            margin-right: 0.75rem;
+            color: var(--accent-orange);
+            width: 20px;
+            text-align: center;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            color: var(--accent-orange);
+            transition: var(--transition);
+        }
+
+        .social-icon:hover {
+            color: var(--accent-blue);
+            transform: translateY(-3px);
+        }
+
+        .nav-links {
+            margin-top: auto;
+        }
+
+        .nav-links ul {
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-bottom: 0.5rem;
+        }
+
+        .nav-links a {
+            display: block;
+            padding: 0.5rem;
+            border-left: 3px solid transparent;
+            transition: var(--transition);
+        }
+
+        .nav-links a:hover, .nav-links a.active {
+            border-left-color: var(--accent-orange);
+            background-color: rgba(234, 182, 118, 0.1);
+            padding-left: 1rem;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+        }
+
+        .hero {
+            min-height: 70vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 4rem 2rem;
+            background: linear-gradient(45deg, rgba(171, 219, 227, 0.2), rgba(234, 182, 118, 0.2));
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            max-width: 700px;
+        }
+
+        .section-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        /* Experience Cards */
+        .experience-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .experience-card {
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 1.5rem;
+            transition: var(--transition);
+            border-top: 4px solid var(--accent-blue);
+        }
+
+        .experience-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .experience-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .experience-duration {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.85rem;
+            background-color: var(--accent-orange);
+            color: white;
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        .experience-company {
+            font-weight: bold;
+            color: var(--accent-orange);
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .skill-tag {
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            background-color: rgba(171, 219, 227, 0.3);
+            padding: 0.25rem 0.5rem;
+            border-radius: 4px;
+        }
+
+        /* Mobile menu button */
+        .menu-toggle {
+            display: none;
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background-color: var(--accent-orange);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: var(--transition);
+        }
+
+        .menu-toggle:hover {
+            background-color: var(--accent-blue);
+        }
+
+        .credentials {
+            margin-top: 2rem;
+        }
+
+        .credentials-list {
+            list-style: none;
+            margin-top: 1rem;
+        }
+
+        .credentials-list li {
+            margin-bottom: 1rem;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+
+        .credentials-list li::before {
+            content: "•";
+            color: var(--accent-orange);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -0.5rem;
+        }
+
+        .language-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        .language-skill {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .language-name {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .language-level {
+            width: 100px;
+            height: 5px;
+            background-color: #ddd;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .language-progress {
+            height: 100%;
+            background-color: var(--accent-orange);
+        }
+
+        /* Portfolio section */
+        .portfolio-heading {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--accent-orange);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transition: var(--transition);
+            pointer-events: none;
+        }
+
+        .back-to-top.visible {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--accent-blue);
+            color: white;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            :root {
+                --sidebar-width: 250px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: var(--sidebar-mobile-height);
+                position: relative;
+                border-right: none;
+                border-bottom: 3px solid var(--accent-blue);
+                padding: 1rem;
+                overflow: hidden;
+                transition: var(--transition);
+            }
+
+            .sidebar.expanded {
+                height: auto;
+                min-height: 100vh;
+            }
+
+            .main-content {
+                margin-left: 0;
+            }
+
+            .menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .profile-image {
+                width: 200px;
+                height: 200px;
+                font-size: 2rem;
+            }
+
+            .experience-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 3rem 1rem;
+            }
+
+            .hero {
+                min-height: 50vh;
+                padding: 3rem 1rem;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            :root {
+                --sidebar-mobile-height: 250px;
+            }
+
+            .hero h1 {
+                font-size: 1.75rem;
+            }
+
+            h2 {
+                font-size: 1.5rem;
+            }
+
+            .profile-image {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+    <meta property="og:image" content="https://cdn.glitch.global/linkdaimagededestaque">
+</head>
+<body>
+    <button class="menu-toggle" id="menuToggle">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <div class="container">
+        <aside class="sidebar" id="sidebar">
+            <div class="sidebar-content">
+                <div class="profile">
+                    <div class="profile-image">
+    <img src="https://cdn.glitch.global/9a659de4-0aa2-48c1-8f73-016dc61af7cb/Roberto%20Camara%20Jr%20%20-%20Copy.png?v=1743819707499" 
+         alt="Foto de Roberto Camara Jr" 
+         style="width: 150px; height: 150x; border-radius: 50%; object-fit: cover; border: 5px solid #eab676; display: block; margin: 0 auto;">
+</div>
+                    <h3>Roberto Camara Jr.</h3>
+                    <p class="meta">Redator | Estrategista de Conteúdo | Gestor de Projetos</p>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+                        <a href="mailto:robertocamarajr@duck.com">robertocamarajr@duck.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
+                        <a target="_blank"href="https://wa.me/5571991880851" rel="noopener noreferrer">WhatsApp</a>
+                    </div>
+                    <div class="contact-item">
+                        <span class="contact-icon"><i class="fas fa-globe"></i></span>
+                        <a href="https://roberto-camara-jr.jimdosite.com/" target="_blank" rel="noopener noreferrer">Portfólio</a>
+                    </div>
+                    <div class="contact-item">
+        <span class="contact-icon"><i class="fas fa-id-card"></i></span>
+        <a href="https://bit.ly/m/robertocamarajr" target="_blank" rel="noopener noreferrer">Cartão de Visitas</a>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon"><i class="fab fa-linkedin"></i></span>
+        <a href="https://www.linkedin.com/in/robertocamarajr" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    </div>
+
+                    <div class="social-links">
+                         <a target="_blank"href="https://bsky.app/profile/robertocamarajr.bsky.social" class="social-icon" rel="noopener noreferrer"><i class="fab fa-bluesky"></i></a>
+                        
+                    </div>
+                </div>
+
+                <div class="nav-links">
+                    <ul>
+                        <li><a target="_blank"href="#home" class="active" rel="noopener noreferrer">Home</a></li>
+                        <li><a target="_blank"href="#about" rel="noopener noreferrer">Sobre</a></li>
+                        <li><a target="_blank"href="#experience" rel="noopener noreferrer">Experiência</a></li>
+                        <li><a target="_blank"href="#skills" rel="noopener noreferrer">Habilidades</a></li>
+                        <li><a target="_blank"href="#portfolio" rel="noopener noreferrer">Portfólio</a></li>
+                        <li><a target="_blank"href="#contact" rel="noopener noreferrer">Contato</a></li>
+                    </ul>
+                </div>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <section id="home" class="hero">
+            <h1>Olá, eu sou o Roberto.</h1>
+              <h2>
+              Tudo bem?
+              Seja bem vind@.
+              </h2>
+
+
+              <h3>Transformo ideias em narrativas que conectam e fazem sentido.</h3>
+              <p>Cada projeto que assumo é uma oportunidade de dar vida a conceitos, traduzir sentimentos em palavras e criar diálogos que realmente impactam, unindo você—e seu produto—ao público que importa.
+
+20 anos de experiência me mostrou que a comunicação vai além das palavras certas.É sobre entender o público, adaptar o tom e criar mensagens que deixam marcas. Seja por meio de campanhas criativas, estratégias de conteúdo ou textos inspiradores, meu objetivo é transformar informação em significado e construir conexões que realmente façam a diferença.</p>
+                <p class="meta">Salvador, Bahia - Brasil</p>
+            </section>
+            
+            <section id="about">
+                <div class="section-content">
+                    <h2>Sobre mim</h2>
+                  
+                  <p>Antes de me encontrar na comunicação, experimentei um pouco de tudo. Já fui jardineiro, operador de máquinas em fábricas de materiais de irrigação e plásticos, e até tirei leite de vacas—sim, literalmente, no curral. Essas vivências me ensinaram o valor do trabalho árduo e da perseverança.
+
+Depois disso, trabalhei como agente de segurança em aeroportos e servi nas forças armadas, onde aprendi sobre disciplina, resiliência e a importância de trabalhar em equipe.
+
+Quando voltei ao Brasil, embarquei em novas aventuras: fui Guia de Turismo, ajudando visitantes a descobrir nossa cultura e história, e também professor, onde aprendi o valor de comunicar de forma simples e clara. Foi aí que percebi: comunicar é muito mais do que falar—é sobre criar conexões e tornar ideias acessíveis.
+
+Hoje, também dedico parte do meu tempo a trabalho voluntário, porque acredito que retribuir e contribuir são fundamentais. Ah, e ser pai me deu uma perspectiva ainda mais prática para lidar com desafios. Educar uma criança é, sem dúvida, a maior lição de estratégia, paciência e criatividade que se pode ter!</p>
+
+                    <div class="credentials">
+                        <h3>Educação & Certificações</h3>
+                        <ul class="credentials-list">
+                            <li>
+                                <strong>Métricas e mensuração de resultados no ambiente digital</strong>
+                                <div class="meta">PUCRS | Setembro 2024</div>
+                            </li>
+                            <li>
+                                <strong>Escrita Criativa: técnicas e práticas</strong>
+                                <div class="meta">PUCRS | Agosto 2024</div>
+                            </li>
+                            <li>
+                                <strong>Imersão Inteligência Artificial 2ª Edição</strong>
+                                <div class="meta">Alura/Google | Maio de 2024</div>
+                            </li>
+                            <li>
+                                <strong>Produção de Podcasts nos moldes do Escriba Café</strong>
+                                <div class="meta">Udemy Brasil | Agosto de 2019</div>
+                            </li>
+                            <li>
+                                <strong>Listen Up! How to launch and grow a hit podcast</strong>
+                                <div class="meta">University of Texas/Knight Center for Journalism in the Americas | Agosto de 2018</div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div class="language-skills">
+                        <div class="language-skill">
+                            <span class="language-name">Português</span>
+                            <div class="language-level">
+                                <div class="language-progress" style="width: 100%;"></div>
+                            </div>
+                            <span class="meta">Nativo</span>
+                        </div>
+
+                        <div class="language-skill">
+                            <span class="language-name">Inglês</span>
+                            <div class="language-level">
+                                <div class="language-progress" style="width: 95%;"></div>
+                            </div>
+                            <span class="meta">Fluente</span>
+                        </div>
+
+                        <div class="language-skill">
+                            <span class="language-name">Hebraico</span>
+                            <div class="language-level">
+                                <div class="language-progress" style="width: 60%;"></div>
+                            </div>
+                            <span class="meta">Intermediário</span>
+                        </div>
+
+                        <div class="language-skill">
+                            <span class="language-name">Espanhol</span>
+                            <div class="language-level">
+                                <div class="language-progress" style="width: 60%;"></div>
+                            </div>
+                            <span class="meta">Intermediário</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="experience" style="background-color: #f5f5f5;">
+                <div class="section-content">
+                    <h2>Experiência Profissional</h2>
+                    <p>Em minha carreira, aprendi a refinar a arte da redação, da estratégia, da gestão e do trabalho em equipe. Mas o que você vê aqui é só a ponta do iceberg—há muito mais experiência acumulada ao longo dos anos, que não cabe nesse espaço. Abaixo, um recorte das minhas vivências mais recentes e relevantes.
+                  No meu LinkedIn, você encontra uma lista completa.</p>
+
+                    <div class="experience-grid">
+                        <div class="experience-card">
+                            <div class="experience-title">
+                                <h3>Redator e Gerente de Conta</h3>
+                                <span class="experience-duration">2022 - Atual</span>
+                            </div>
+                            <p class="experience-company">Comunica</p>
+                            <p>Criação de campanhas e redação para redes sociais, desenvolvendo procedimentos de gestão de clientes e conduzindo análises estratégicas para o setor de saúde.</p>
+                            <div class="skills-list">
+                                <span class="skill-tag">Redação para web</span>
+                                <span class="skill-tag">Gestão de contas</span>
+                                <span class="skill-tag">Estratégia digital</span>
+                            </div>
+                        </div>
+
+                        <div class="experience-card">
+                            <div class="experience-title">
+                                <h3>Analista de Comunicação</h3>
+                                <span class="experience-duration">Mar - Jul 2024</span>
+                            </div>
+                            <p class="experience-company">Agência Pólvora</p>
+                            <p>Produção de conteúdo para blogs, LPs, newsletters e redes sociais. Atendimento de conta-chave para o squad B2B e criação de modelo de tagueamento de materiais.</p>
+                            <div class="skills-list">
+                                <span class="skill-tag">Conteúdo B2B</span>
+                                <span class="skill-tag">Email marketing</span>
+                                <span class="skill-tag">Reporting</span>
+                            </div>
+                        </div>
+
+                        <div class="experience-card">
+                            <div class="experience-title">
+                                <h3>Editor, Redator e Curador</h3>
+                                <span class="experience-duration">2009 - 2023</span>
+                            </div>
+                            <p class="experience-company">SIB - Sociedade Israelita da Bahia</p>
+                            <p>Edição da newsletter semanal por mais de 10 anos, produção e apresentação de podcast, redação e edição de posts para blogs.</p>
+                            <div class="skills-list">
+                                <span class="skill-tag">Edição</span>
+                                <span class="skill-tag">Podcasting</span>
+                                <span class="skill-tag">Newsletter</span>
+                            </div>
+                        </div>
+
+                        <div class="experience-card">
+                            <div class="experience-title">
+                                <h3>Criador e Editor</h3>
+                                <span class="experience-duration">2019 - 2022</span>
+                            </div>
+                            <p class="experience-company">Podcastologia</p>
+                            <p>Criação de um dos primeiros informativos sobre podcasts no Brasil, reunindo notícias, curiosidades e tendências do setor.</p>
+                            <div class="skills-list">
+                                <span class="skill-tag">Podcasting</span>
+                                <span class="skill-tag">Curadoria</span>
+                                <span class="skill-tag">Newsletter</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills">
+                <div class="section-content">
+                    <h2>Habilidades</h2>
+                    <p>Sabe aquela ideia que parece incrível, mas precisa ser lapidada para realmente brilhar? Pois é, com mais de duas décadas mergulhado no mundo da comunicação, aprendi a transformar conceitos em narrativas envolventes. Meu trabalho é conectar marcas e pessoas de forma genuína, usando estratégias certeiras e um conteúdo que faz sentido de verdade. No fim das contas, comunicação eficaz é sobre criar conexões.</p>
+
+                    <div class="experience-grid">
+                        <div class="experience-card">
+                            <h3>Redação e Criação de Conteúdo</h3>
+                            <ul>
+                                <li>Copywriting persuasivo</li>
+                                <li>Storytelling para marcas</li>
+                                <li>Produção de conteúdo multiformato</li>
+                                <li>Blogs, newsletters e redes sociais</li>
+                                <li>Scripts e roteiros para podcasts</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-card">
+                            <h3>Gestão de Comunicação e Projetos</h3>
+                            <ul>
+                                <li>Desenvolvimento de estratégias digitais</li>
+                                <li>Execução de planos de comunicação</li>
+                                <li>Coordenação de projetos e equipes</li>
+                                <li>Gerenciamento de crises de comunicação</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-card">
+                            <h3>Marketing Digital e Mídias Sociais</h3>
+                            <ul>
+                                <li>Criação e otimização de campanhas</li>
+                                <li>Análise de dados e métricas</li>
+                                <li>SEO e SEM</li>
+                                <li>WordPress, Meta Business Suite, MLabs</li>
+                            </ul>
+                        </div>
+
+                        <div class="experience-card">
+                            <h3>Soft Skills</h3>
+                            <ul>
+                                <li>Comunicação clara e eficaz</li>
+                                <li>Liderança e trabalho em equipe</li>
+                                <li>Resolução de problemas</li>
+                                <li>Adaptabilidade e resiliência</li>
+                                <li>Orientação a resultados</li>conteúdos multiformato
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="portfolio" style="background-color: #f5f5f5;">
+                <div class="section-content">
+                    <div class="portfolio-heading">
+                        <h2>Portfólio</h2>
+                        <p>Aqui você encontra uma amostra dos meus trabalhos recentes, mostrando um pouco do que já criei nestes últimos anos. São projetos que refletem minha experiência, meu olhar e minha preocupação em conectar marcas e públicos. Cada peça do portfólio carrega aprendizado, suor, criatividade e resultados—mas, mais do que isso, representam histórias de marcas que encontraram sua voz, estratégias que transformaram desafios em oportunidades e conteúdo que geraram conexões verdadeiras. Para ter acesso ao meu portiólio completo, clique no botão indicado.</p>
+                    </div>
+
+                    <div class="experience-grid">
+                        <div class="experience-card">
+                            <h3>Comunica - Área da Saúde</h3>
+                            <p>Estratégia de comunicação e gestão de redes sociais para clínicas e profissionais da saúde, incluindo Núcleo ABA, A Casa das Oficinas, Mente e Movimento e outros.</p>
+                            <a target="_blank"href="#" rel="noopener noreferrer">Ver projeto &rarr;</a>
+                        </div>
+
+                        <div class="experience-card">
+                            <h3>TARGIT Brasil</h3>
+                            <p>Conteúdo B2B para empresa de business intelligence, incluindo blog posts técnicos, newsletters e materiais para funil de vendas.</p>
+                            <a target="_blank"href="#" rel="noopener noreferrer">Ver projeto &rarr;</a>
+                        </div>
+
+                        <div class="experience-card">
+                            <h3>SIB e-news</h3>
+                            <p>Newsletter semanal com mais de 10 anos de produção contínua, alcançando toda a comunidade judaica local e nacional.</p>
+                            <a target="_blank"href="#" rel="noopener noreferrer">Ver projeto &rarr;</a>
+                        </div>
+
+                        <div class="experience-card">
+                            <h3>Podcasts</h3>
+                            <p>Produção completa de podcasts, incluindo o "Me Tire Deste Ócio Podcast" e séries especiais para a Sociedade Israelita da Bahia.</p>
+                            <a target="_blank"href="#" rel="noopener noreferrer">Ver projeto &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="contact">
+                <div class="section-content">
+                    <h2>Vamos Conversar</h2>
+                    <p>Estou sempre pronto para novos projetos e parcerias. Se voc&ecirc; est&aacute; em busca de algu&eacute;m com experi&ecirc;ncia em estrat&eacute;gia de conte&uacute;do e comunica&ccedil;&atilde;o digital, Basta chamar. Adoro uma boa conversa&mdash;e, se vier acompanhada de um bom caf&eacute; (com leite e 3 pacotinhos de a&ccedil;&uacute;car - julgue-me depois), melhor ainda!</p>
+
+                   <div class="contact-info" style="max-width: 600px; margin: 2rem auto;">
+    <div class="contact-item">
+        <span class="contact-icon"><i class="fas fa-envelope"></i></span>
+        <a href="mailto:robertocamarajr@duck.com">robertocamarajr@duck.com</a>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon"><i class="fab fa-whatsapp"></i></span>
+        <a href="https://wa.me/5571991880851">WhatsApp</a>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon"><i class="fas fa-globe"></i></span>
+        <a href="https://roberto-camara-jr.jimdosite.com/" target="_blank">Portfólio</a>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon"><i class="fas fa-id-card"></i></span>
+        <a href="https://bit.ly/m/robertocamarajr" target="_blank">Cartão de Visitas</a>
+    </div>
+    <div class="contact-item">
+        <span class="contact-icon"><i class="fab fa-linkedin"></i></span>
+        <a href="https://www.linkedin.com/in/robertocamarajr" target="_blank">LinkedIn</a>
+    </div>
+
+    <div class="social-links">
+        <a href="https://bsky.app/profile/robertocamarajr.bsky.social" class="social-icon"><i class="fab fa-bluesky"></i></a>
+    </div>
+</div>
+
+                       
+            </section>
+        </main>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Roberto Camara Jr. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <a target="_blank"href="#" class="back-to-top" rel="noopener noreferrer">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // JavaScript for menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('expanded');
+        });
+
+        // JavaScript for back-to-top button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
+    <a target="_blank"href="#" class="back-to-top" rel="noopener noreferrer">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <script>
+        // JavaScript for menu toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebar = document.getElementById('sidebar');
+
+        menuToggle.addEventListener('click', () => {
+            sidebar.classList.toggle('expanded');
+        });
+
+        // JavaScript for back-to-top button
+        const backToTop = document.querySelector('.back-to-top');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                backToTop.classList.add('visible');
+            } else {
+                backToTop.classList.remove('visible');
+            }
+        });
+    </script>
+</body>
+</html>
